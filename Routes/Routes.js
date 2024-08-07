@@ -8,6 +8,8 @@ const UserDetails = require("../Controller/Userdetails");
 const { Users } = require("../Controller/Users");
 const NewBooking = require("../Controller/Bookings/Booking");
 const GetUserBookings = require("../Controller/Bookings/GetUserBookings");
+const newpayment = require("../Controller/Payment/NewPayment");
+const PaymentSucess = require("../Controller/Payment/PaymentSucess");
 
 Router.post("/Signup", SignUp);
 Router.get("/Login/:username/:password", Login);
@@ -16,4 +18,9 @@ Router.get("/Users", authToken, Users )
 
 Router.post("/NewBooking",authToken,NewBooking);
 Router.get('/bookings', authToken, GetUserBookings);
+
+
+Router.post("/checkout",  authToken, newpayment);
+Router.post("/payment/success", authToken, PaymentSucess);
+
 module.exports = Router
