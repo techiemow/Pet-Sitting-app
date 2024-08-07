@@ -10,6 +10,8 @@ const NewBooking = require("../Controller/Bookings/Booking");
 const GetUserBookings = require("../Controller/Bookings/GetUserBookings");
 const newpayment = require("../Controller/Payment/NewPayment");
 const PaymentSucess = require("../Controller/Payment/PaymentSucess");
+const deletebooking = require("../Controller/Bookings/DeleteBooking");
+const updateBooking = require("../Controller/Bookings/UpdateBooking");
 
 Router.post("/Signup", SignUp);
 Router.get("/Login/:username/:password", Login);
@@ -18,6 +20,8 @@ Router.get("/Users", authToken, Users )
 
 Router.post("/NewBooking",authToken,NewBooking);
 Router.get('/bookings', authToken, GetUserBookings);
+Router.delete("/DeleteBooking/:id" , authToken, deletebooking);
+Router.put("/UpdateBooking/:id" , authToken, updateBooking);
 
 
 Router.post("/checkout",  authToken, newpayment);

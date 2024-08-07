@@ -12,7 +12,7 @@ const bookingSchema = new Schema({
   specialRequests: { type: String },
   petImages:{ type: Array, required: true},
   price:{ type: Number, required: true},
-  user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  user: { type: Schema.Types.ObjectId, ref: 'User', required: true }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Booking', bookingSchema);
