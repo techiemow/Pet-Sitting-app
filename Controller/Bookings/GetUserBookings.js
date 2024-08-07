@@ -1,8 +1,11 @@
 const BookingModel = require("../../Model/BookingModel");
 
+
 const GetUserBookings = async (req, res) => {
   try {
     const bookings = await BookingModel.find({ user: req.userId });
+   
+    
     res.status(200).json({
       success: true,
       data: bookings

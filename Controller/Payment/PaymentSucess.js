@@ -22,7 +22,7 @@ const PaymentSucess = async(req,res) =>{
             petDetails: req.body.petDetails // Pass pet details from the frontend
         });
         
-        console.log(payment)
+        console.log("payment",payment)
         res.json({ success: true, data:payment });
     } catch(err){
         res.json({

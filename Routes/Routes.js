@@ -12,16 +12,20 @@ const newpayment = require("../Controller/Payment/NewPayment");
 const PaymentSucess = require("../Controller/Payment/PaymentSucess");
 const deletebooking = require("../Controller/Bookings/DeleteBooking");
 const updateBooking = require("../Controller/Bookings/UpdateBooking");
+const patchpayment = require("../Controller/Bookings/PatchPayment");
+const profile = require("../Controller/Profile");
 
 Router.post("/Signup", SignUp);
 Router.get("/Login/:username/:password", Login);
 Router.get("/UserDetails",authToken, UserDetails)
 Router.get("/Users", authToken, Users )
+Router.get("/profile",authToken, profile)
 
 Router.post("/NewBooking",authToken,NewBooking);
 Router.get('/bookings', authToken, GetUserBookings);
 Router.delete("/DeleteBooking/:id" , authToken, deletebooking);
 Router.put("/UpdateBooking/:id" , authToken, updateBooking);
+Router.put("/Status/:id/payment", authToken, patchpayment)
 
 
 Router.post("/checkout",  authToken, newpayment);

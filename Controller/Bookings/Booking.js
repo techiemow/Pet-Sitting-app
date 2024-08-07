@@ -1,9 +1,9 @@
 const BookingModel = require("../../Model/BookingModel");
 
+
 const NewBooking = async (req, res) => {
   try {
-    // Log the entire request body
-    console.log(req.body);
+
 
     // Create a new booking using the data from the request body
     const booking = new BookingModel({
@@ -13,7 +13,7 @@ const NewBooking = async (req, res) => {
 
     // Save the booking to the database
     const bookings = await booking.save();
-    console.log(bookings);
+    console.log(bookings , "bookings saved to database");
 
     // Send a success response
     res.status(201).json({
