@@ -14,6 +14,7 @@ const deletebooking = require("../Controller/Bookings/DeleteBooking");
 const updateBooking = require("../Controller/Bookings/UpdateBooking");
 const patchpayment = require("../Controller/Bookings/PatchPayment");
 const profile = require("../Controller/Profile");
+const contact = require("../Controller/Contact/Contact");
 
 Router.post("/Signup", SignUp);
 Router.get("/Login/:username/:password", Login);
@@ -30,5 +31,7 @@ Router.put("/Status/:id/payment", authToken, patchpayment)
 
 Router.post("/checkout",  authToken, newpayment);
 Router.post("/payment/success", authToken, PaymentSucess);
+
+Router.post("/contact",contact)
 
 module.exports = Router
