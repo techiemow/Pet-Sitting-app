@@ -14,6 +14,11 @@ app.use(cors({
     credentials: true
 }));
 
+console.log(process.env.FRONTEND_URL,
+"frontend url"
+);
+
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 
