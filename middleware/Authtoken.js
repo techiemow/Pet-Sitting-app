@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken')
 async function authToken(req,res,next){
     try{
         const token = req.cookies?.token
+       
+        
         const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY
        
      
